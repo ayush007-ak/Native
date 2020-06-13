@@ -5,7 +5,9 @@ import Placdetail from './PlacdetailComponent';
 import { View, Platform  } from 'react-native';
 import { createStackNavigator , createDrawerNavigator  } from 'react-navigation';
 import Home from './HomeComponent';
-import { Icon } from 'react-native-elements';
+//import { Icon } from 'react-native-elements';
+import ContactUs from './ContactComponent';
+import About from './AboutusComponent';
 
 const MenuNavigator = createStackNavigator({
   Menu: { screen: Menu },
@@ -39,13 +41,48 @@ const HomeNavigator = createStackNavigator({
     headerTintColor: "#fff"  
   })
 });
+
+
+const ContactUsNavigator = createStackNavigator({
+  ContacUs: { screen: ContactUs}
+}, {
+  navigationOptions: ({ navigation }) => ({
+    headerStyle: {
+        backgroundColor: "#21618C"
+    },
+    headerTitleStyle: {
+        color: "#fff"            
+    },
+    headerTintColor: "#fff"  
+  })
+});
+
+
+
+const AboutNavigator = createStackNavigator({
+  AboutUs: { screen: About}
+}, {
+  navigationOptions: ({ navigation }) => ({
+    headerStyle: {
+        backgroundColor: "#21618C"
+    },
+    headerTitleStyle: {
+        color: "#fff"            
+    },
+    headerTintColor: "#fff"  
+  })
+});
+
+
+
+
 const MainNavigator = createDrawerNavigator({
   Home: 
-    { screen: HomeNavigator,
+    { screen: HomeNavigator,                  //this main handle
       navigationOptions: {
         title: 'Home',
         drawerLabel: 'Home'
-      }
+      },
     },
   Menu: 
     { screen: MenuNavigator,
@@ -53,10 +90,36 @@ const MainNavigator = createDrawerNavigator({
         title: 'Menu',
         drawerLabel: 'Menu'
       }, 
-    }
+    },
+
+    ContactUs: 
+    { screen: ContactUsNavigator,
+      navigationOptions: {
+        title: 'Contact Us',
+        drawerLabel: 'Contact Us'
+      },
+    },
+
+
+    AboutUs: 
+    { screen: AboutNavigator,
+      navigationOptions: {
+        title: 'About Us',
+        drawerLabel: 'About Us'
+      },
+    },
+
+
+
+
 }, {
 drawerBackgroundColor: '#D1C4E9'
 });
+
+
+
+
+
 
 
 
