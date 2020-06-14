@@ -4,7 +4,7 @@ import {Card} from 'react-native-elements';
 import {PLACES} from '../shared/places';
 import {PROMOTIONS} from '../shared/promotion';
 import {LEADERS} from '../shared/leaders';
-import {COMMENTS} from '../shared/comments';
+
 
 
 function RenderItem(props) {
